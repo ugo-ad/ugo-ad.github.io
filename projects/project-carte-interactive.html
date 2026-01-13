@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte interactive des clients, prospects et fournisseurs</title>
+  <link rel="stylesheet" href="../css/styles-v3.css" />
+  <link rel="stylesheet" href="../css/styles-projects.css" />
+</head>
+
+<body>
+  <div class="particle-bg">
+    <img class="particle-bg-image"
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      alt="" />
+    <div class="particle-layer">
+      <!-- 60 cercles par exemple -->
+      <div class="circle-container">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-container">
+        <div class="circle"></div>
+      </div>
+      <!-- duplique cette ligne jusqu'à ~60-100 fois -->
+    </div>
+  </div>
+  <div class="project-container">
+    <!-- Header with icon and title -->
+    <div class="project-header-section">
+      <span class="project-icon">🔬</span>
+      <h1 class="project-title">Carte interactive des clients, prospects et fournisseurs</h1>
+      <p class="project-subtitle">Visualisation géographique dynamique des partenaires commerciaux avec différent
+        filtres</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="project-nav">
+      <div class="back-link">
+        <a href="../terminal.html#projects">← Retour au portfolio</a>
+      </div>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Complété</span>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="project-content">
+
+      <!-- Description section -->
+      <div class="section">
+        <h2 class="section-title">Description</h2>
+        <div class="section-body">
+          <p>
+            C’est un outil qui transforme des tableaux Excel en carte interactive, lisible par n’importe qui dans un
+            navigateur.
+            Il affiche les clients, prospects et fournisseurs sur une carte, avec des couleurs différentes selon le type
+            d’entité,
+            et permet de filtrer par période, par catégorie ou par rayon autour d’une zone. L’utilisateur peut ainsi
+            voir en un coup
+            d’œil quelles zones sont bien couvertes ou sous-exploitées, et préparer beaucoup plus facilement ses
+            tournées et actions
+            commerciales.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objectives section -->
+      <div class="section">
+        <h2 class="section-title">Objectifs du projet</h2>
+        <div class="section-body">
+          <ul>
+            <li>Visualiser sur une carte l’ensemble des clients, prospects et fournisseurs à partir de simples fichiers
+              Excel.</li>
+            <li>Automatiser le géocodage des adresses et la génération d’une carte interactive avec filtres par type
+              d’entité,
+              période d’activité et rayon géographique, pour faciliter l’analyse et la planification.</li>
+            <li>Proposer un outil simple à utiliser (interface graphique + exécutable) que des utilisateurs non
+              techniques peuvent
+              lancer pour générer et mettre à jour la carte de manière autonome.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Technology stack -->
+      <div class="section">
+        <h2 class="section-title">Technologies utilisées</h2>
+        <div class="section-body">
+          <ul class="tech-list">
+            <li>
+              <strong>Langage & traitement de données</strong>
+              <span>Python | Pandas (lecture et nettoyage des fichiers Excel)</span>
+            </li>
+            <li>
+              <strong>Géocodage</strong>
+              <span>Nominatim / geopy | RateLimiter (respect des limites de requêtes)</span>
+            </li>
+            <li>
+              <strong>Cartographie & front</strong>
+              <span>Folium (génération de carte HTML) | JavaScript (filtres dynamiques, rayon, type, date)</span>
+            </li>
+            <li>
+              <strong>Interface utilisateur</strong>
+              <span>Tkinter (sélection des fichiers, choix des colonnes, lancement du traitement)</span>
+            </li>
+            <li>
+              <strong>Packaging</strong>
+              <span>auto-py-to-exe (création d’un exécutable autonome)</span>
+            </li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Tkinter</span>
+            <span class="tech-tag">Folium</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key learnings -->
+      <div class="section">
+        <h2 class="section-title">Apprentissages clés</h2>
+        <div class="learnings-grid">
+          <div class="learning-card">
+            <p><strong>Nettoyage et qualité des données</strong>
+              Prise de conscience que la fiabilité d’un outil de visualisation dépend d’abord de la propreté des données
+              (adresses complètes, formats homogènes, gestion des CEDEX et caractères spéciaux).</p>
+          </div>
+          <div class="learning-card">
+            <p><strong>Gestion pratique du géocodage</strong>
+              Apprentissage des limites réelles des APIs de géocodage (rate limiting, erreurs de résolution) et mise en
+              place
+              de stratégies pour les contourner proprement avec un prétraitement et un RateLimiter.</p>
+          </div>
+          <div class="learning-card">
+            <p><strong>Lien Python → carte web interactive</strong>
+              Expérience concrète d’intégration entre un script Python (Pandas, géocodage) et une carte HTML interactive
+              via
+              Folium et JavaScript pour ajouter des filtres avancés (type, date, rayon).</p>
+          </div>
+          <div class="learning-card">
+            <p><strong>Conception d’outil pour non-techniciens</strong>
+              Conception d’une interface simple (Tkinter + exécutable) permettant à des utilisateurs non techniques de
+              générer
+              eux‑mêmes une carte exploitable à partir de leurs fichiers Excel.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcomes -->
+      <div class="section">
+        <h2 class="section-title">Résultats</h2>
+        <div class="section-body">
+          <p>
+            La carte interactive finale est exportée en HTML et consultable dans n’importe quel navigateur, avec des
+            marqueurs
+            différenciés pour les clients, prospects et fournisseurs et des filtres par type, par période d’activité et
+            par rayon
+            géographique. Les optimisations de nettoyage et de prétraitement des adresses ont permis de réduire le taux
+            d’adresses
+            non localisées à environ 0,02%, ce qui rend la carte fiable. L’outil, accessible via une simple interface
+            graphique et
+            un exécutable, permet à un utilisateur non technique de générer et mettre à jour la carte en autonomie à
+            partir de
+            nouveaux fichiers Excel, ce qui simplifie fortement la préparation des tournées et le suivi des zones à fort
+            potentiel.
+          </p>
+        </div>
+      </div>
+
+      <!-- EXEMPLE DE GALERIE D'IMAGES -->
+      <div class="section">
+        <h2 class="section-title">Galerie / Screenshots</h2>
+        <div class="project-gallery">
+          <div class="gallery-item">
+            <img src="../assets/Carte Interactive/carte-all.png" alt="Carte interactive" class="zoomable" />
+            <div class="gallery-caption">Vue d'ensemble de la carte</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Carte Interactive/carte-fournisseur-date.png" alt="Carte interactive"
+              class="zoomable" />
+            <div class="gallery-caption">Vue avec filtre fournisseurs et date</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Carte Interactive/carte-date-rayon.png" alt="Carte interactive" class="zoomable" />
+            <div class="gallery-caption">Vue avec filtre date et rayon</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Carte Interactive/carte-rayon-adresse.png" alt="Carte interactive" class="zoomable" />
+            <div class="gallery-caption">Vue de l'adresse</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer with metadata -->
+    <div class="project-footer">
+      <span class="status-badge">
+        <span class="status-dot"></span>
+        Complété & Documenté
+      </span>
+    </div>
+  </div>
+  <script src="../js/galerie.js"></script>
+  <script src="../js/project-back.js"></script>
+</body>
+
+</html>

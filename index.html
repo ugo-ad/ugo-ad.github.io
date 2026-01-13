@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio, Analyste SOC & Blue Team</title>
+
+    <link rel="stylesheet" href="css/welcome.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="rh-header">
+        <div class="rh-logo">Ugo<span>.Security</span></div>
+        <nav class="header-nav">
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="rankings.html?from=index">Rankings</a>
+        </nav>
+        <a href="#contact" class="btn-contact">Me contacter</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Analyste SOC & Blue Team en devenir</h1>
+            <p class="hero-subtitle">
+                Analyste en cybersécurité passionné par la défense des systèmes, 
+                l'investigation forensique et la résilience infrastructurelle.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS AVEC SLIDER ANIMÉ (Du terminal) -->
+    <section class="skills-section" id="skills">
+        <div class="section-label">🛡️ Expertise & Stack Technique</div>
+
+        <div class="skills-deck-layout">
+            <div class="skills-slider-container">
+                <!-- CARTES SKILLS (GAUCHE) -->
+                <div class="cards-stack-wrapper">
+                    <div class="card-stack" id="skillsCardStack">
+                        <!-- Généré par JavaScript -->
+                    </div>
+                </div>
+
+                <!-- DESCRIPTION PANEL (DROITE) -->
+                <div class="skill-description-panel">
+                    <div class="skill-header">
+                        <span class="skill-icon-large" id="skillIconDisplay">🛡️</span>
+                        <h2 id="skillTitleDisplay">Network Forensics</h2>
+                    </div>
+
+                    <div class="skill-details">
+                        <p id="skillDescDisplay">Description de la compétence...</p>
+                    </div>
+
+                    <div class="skill-tags" id="skillTagsDisplay">
+                        <span>Tag 1</span>
+                        <span>Tag 2</span>
+                    </div>
+
+                    <div class="skill-progress-container">
+                        <div class="progress-labels-top">
+                            <label>Maîtrise</label>
+                            <label id="skillLevelText">85%</label>
+                        </div>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" id="skillProgressDisplay" style="width: 85%;"></div>
+                        </div>
+                        <div class="progress-steps-labels">
+                            <span>Novice</span>
+                            <span>Débutant</span>
+                            <span>Interm.</span>
+                            <span>Avancé</span>
+                            <span>Expert</span>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="nav-btn" onclick="prevSkill()">←</button>
+                        <div class="pagination-dots" id="skillDots">
+                            <!-- Généré par JavaScript -->
+                        </div>
+                        <button class="nav-btn" onclick="nextSkill()">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RANKINGS SECTION -->
+    <section class="rankings-section" id="rankings">
+        <div class="section-label">🏆 Classements & Réalisations</div>
+        <div class="rankings-intro"
+            style="max-width:900px;margin:0 auto 30px;text-align:center;color:rgba(245,245,245,0.8);padding:0 20px;">
+            <p>Découvrez mes contributions, classements et reconnaissances récentes.</p>
+            <a href="rankings.html?from=index" class="btn-contact"
+                style="margin-top:12px;display:inline-block;">clicker pour voire plus</a>
+        </div>
+
+        <!-- PROJETS (Depuis data.js) -->
+        <section class="projects-section" id="projects">
+            <div class="section-label">🔧 Projets Sélectionnés</div>
+            <div id="projectGrid" class="projects-grid">
+                <!-- Généré par JavaScript -->
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="rh-footer" id="contact">
+            <p>&copy; 2026 Ugo Angles-Desrumaux — Portfolio Cybersécurité</p>
+            <div class="footer-links">
+                <a href="https://github.com/ugo-ad" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/ugoanglesdesrumaux/" target="_blank">LinkedIn</a>
+                <a href="mailto:ugo.ad.contact@gmail.com">Email</a>
+                <a href="rankings.html?from=index">Rankings</a>
+            </div>
+        </footer>
+
+        <!-- MODE TOGGLE -->
+        <button class="mode-toggle" onclick="window.location.href='terminal.html?from=index'">
+            💻 Mode Terminal
+        </button>
+
+        <!-- SCRIPTS -->
+        <script src="js/data.js"></script>
+        <script src="js/projects.js"></script>
+        <script>
+            // Utiliser les fonctions définies dans js/data.js
+            window.addEventListener('load', () => {
+                if (typeof initSkillsSlider === 'function') initSkillsSlider();
+                if (typeof renderProjects === 'function') renderProjects();
+            });
+        </script>
+        <script src="js/modals.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr" data-color-scheme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Terminal Mode</title>
+  <!-- ✅ CHARGE LE CSS EXTERNE -->
+  <link rel="stylesheet" href="https://gitlab.limos.fr/-/snippets/33/raw/master/matrix.css">
+  <link rel="stylesheet" href="css/styles-v3.css" />
+</head>
+
+<body>
+  <!-- mode switch removed as requested -->
+  <canvas id="matrix-bg"></canvas>
+  <!-- Ton terminal -->
+  <div class="terminal-shell">
+    <div class="terminal-glow"></div>
+    <div class="terminal-header">
+      <div class="window-controls">
+        <div class="window-dot window-dot--close"></div>
+        <div class="window-dot window-dot--minimize"></div>
+        <div class="window-dot window-dot--maximize"></div>
+      </div>
+      <div class="window-title">
+        <div class="status-led"></div>
+        <span>secure-shell / portfolio</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="badge">
+          <div class="badge-dot"></div>
+          <span>cyberdefense · online</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="terminal-body">
+      <div class="terminal-screen" id="terminalScreen" aria-live="polite"></div>
+
+      <div class="prompt-input-container">
+        <div class="prompt-row">
+          <span class="prompt-prefix">┌──(<span id="usernamePrompt">cyber-analyst</span>@portfolio)-[</span>
+          <span class="prompt-path">~/</span>
+          <span class="prompt-prefix">]</span>
+        </div>
+        <div class="prompt-row">
+          <span class="prompt-prefix">└─$</span>
+          <input id="terminalInput" class="prompt-input" type="text" spellcheck="false" autocomplete="off"
+            placeholder="Tape 'help' pour commencer" />
+          <span class="cursor" aria-hidden="true"></span>
+        </div>
+        <div class="hint-bar">
+          <div>
+            <span
+              style="border: 1px solid rgba(148, 163, 184, 0.5); padding: 1px 6px; border-radius: 999px; margin-right: 4px; font-size: 10px;">↑</span>
+            historique ·
+            <span
+              style="border: 1px solid rgba(148, 163, 184, 0.5); padding: 1px 6px; border-radius: 999px; margin: 0 4px; font-size: 10px;">Tab</span>
+            auto‑complétion
+          </div>
+          <span>Cmds: <strong>help</strong>, <strong>about</strong>, <strong>skills</strong>, <strong>projects</strong>,
+            <strong>rankings</strong>, <strong>contact</strong>, <strong>clear</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>mode <strong>terminal immersif</strong> · cybersecurity / blue team</span>
+      <span>© <strong id="yearFooter"></strong> · personal portfolio</span>
+    </div>
+    <div class="scanline"></div>
+  </div>
+
+  <!-- ===== MODAL SKILLS ===== -->
+  <div class="modal-overlay" id="skillsModal">
+    <div class="modal-content skills-deck-layout">
+      <button class="modal-close" onclick="closeModal('skillsModal')">×</button>
+
+      <!-- Conteneur principal du slider -->
+      <div class="skills-slider-container">
+
+        <!-- Zone des cartes (Visuel) -->
+        <div class="cards-stack-wrapper">
+          <!-- Les cartes seront injectées ici par JS, ou tu peux les mettre en dur -->
+          <div class="card-stack" id="skillsCardStack">
+            <!-- Exemple de structure d'une carte (générée par JS plus bas) -->
+            <!-- <div class="skill-card-3d active">...</div> -->
+          </div>
+        </div>
+
+        <!-- Zone de description (Texte qui change) -->
+        <div class="skill-description-panel">
+          <div class="skill-header">
+            <span class="skill-icon-large" id="skillIconDisplay">🛡️</span>
+            <h2 id="skillTitleDisplay">SOC Analysis</h2>
+          </div>
+
+          <div class="skill-details">
+            <p id="skillDescDisplay">Surveillance et analyse des logs en temps réel pour détecter les intrusions.</p>
+
+            <div class="skill-tags" id="skillTagsDisplay">
+              <span>Splunk</span>
+              <span>Wireshark</span>
+              <span>Suricata</span>
+            </div>
+
+            <div class="skill-progress-container">
+              <div class="progress-labels-top">
+                <label>Niveau de maîtrise</label>
+                <span id="skillLevelText" style="font-size: 12px; color: var(--color-teal-300);">Expert</span>
+              </div>
+
+              <div class="skill-progress-bar">
+                <div class="skill-progress-fill" id="skillProgressDisplay" style="width: 85%"></div>
+              </div>
+
+              <!-- Nouveaux labels sous la barre -->
+              <div class="progress-steps-labels">
+                <span>Novice</span>
+                <span>Débutant</span>
+                <span>Interm.</span>
+                <span>Avancé</span>
+                <span>Expert</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contrôles de navigation -->
+          <div class="slider-controls">
+            <button class="nav-btn prev" onclick="prevSkill()">←</button>
+            <div class="pagination-dots" id="skillDots"></div>
+            <button class="nav-btn next" onclick="nextSkill()">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Ancre section projects -->
+
+  <!-- ===== MODAL PROJECTS ===== -->
+  <div class="modal-overlay" id="projectsModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <h2>Projets</h2>
+          <p>Sélection de mes travaux en cybersécurité (clic pour détails)</p>
+        </div>
+        <button class="modal-close" onclick="closeModal('projectsModal')">✕</button>
+      </div>
+
+      <!-- ✅ CONTENEUR POUR LES CARTES -->
+      <div id="projectGrid" class="project-grid"></div>
+
+    </div>
+  </div>
+
+  <!-- project detail modal removed; projects open dedicated pages now -->
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/data.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/matrix.js"></script>
+  <script src="js/mode-switch.js"></script>
+  <button class="mode-toggle" onclick="window.location.href='index.html?from=terminal'">💠 Mode Easy</button>
+</body>
+
+</html>

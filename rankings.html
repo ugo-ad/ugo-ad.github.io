@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rankings — Portfolio</title>
+    <link rel="stylesheet" href="css/styles-rankings.css" />
+</head>
+
+<body>
+    <div class="particle-bg">
+        <img class="particle-bg-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg" alt="" />
+        <div class="particle-layer">
+            <!-- 60 cercles par exemple -->
+            <div class="circle-container">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-container">
+                <div class="circle"></div>
+            </div>
+            <!-- duplique cette ligne jusqu'à ~60-100 fois -->
+        </div>
+    </div>
+    <a class="back-link" href="terminal.html">← Retour</a>
+
+    <script>
+        // Ajuste dynamiquement la cible du bouton retour selon ?from=
+        (function () {
+            try {
+                const params = new URLSearchParams(location.search);
+                const from = (params.get('from') || '').toLowerCase();
+                const back = document.querySelector('.back-link');
+                if (!back) return;
+                if (from === 'index') {
+                    back.href = 'index.html';
+                } else if (from === 'terminal') {
+                    back.href = 'terminal.html';
+                } else {
+                    // si inconnu, utiliser history.back() pour meilleure UX
+                    back.addEventListener('click', (ev) => {
+                        ev.preventDefault();
+                        if (history.length > 1) history.back();
+                        else location.href = 'terminal.html';
+                    });
+                }
+            } catch (e) {
+                console.warn('Impossible de configurer le bouton retour:', e);
+            }
+        })();
+    </script>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cybersecurity <span style="color: var(--color-accent);">Rankings</span></h1>
+            <p>CTF • Classements • Certifications</p>
+            <p style="font-size: 0.95rem; color: rgb(255, 255, 255); margin-top: 20px;">↓ Scroll to explore ↓</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">CTF <span>Highlights</span></h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-panel">
+                    <h3>Guardia CTF 2024</h3>
+                    <p>Team Guardia — 2ᵉ place en équipe.</p>
+                </div>
+                <div class="timeline-point"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-panel">
+                    <h3>Guardia CTF 2025</h3>
+                    <p>Team Guardia — 4ᵉ place en équipe.</p>
+                    <p>1ʳᵉ place parmi les étudiant de 1ʳᵉ année.</p>
+                </div>
+                <div class="timeline-point"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-panel">
+                    <h3>Guardia National CTF</h3>
+                    <p>33 / 133 en solo.</p>
+                    <p>(Toutes années et campus confondus.)</p>
+                </div>
+                <div class="timeline-point"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-panel">
+                    <h3>Prochain CTF</h3>
+                    <p>Participation prévue à de nouveaux CTF en 2026.</p>
+                </div>
+                <div class="timeline-point"></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Classements <span>Plateformes</span></h2>
+        <div class="platforms-container">
+            <div class="platform-card">
+                <div class="platform-inner">
+                    <div class="platform-name">🥈 BTLO</div>
+                    <div class="platform-rank-line">
+                        <span class="platform-rank-main">#54 FR</span>
+                        <span class="platform-rank-sub">(#978 World)</span>
+                    </div>
+                    <span class="platform-badge">Activité Faible</span>
+                </div>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-inner">
+                    <div class="platform-name">🥇 CyberDefenders</div>
+                    <div class="platform-rank-line">
+                        <span class="platform-rank-main">#8 FR</span>
+                        <span class="platform-rank-sub">(#135 World)</span>
+                    </div>
+                    <span class="platform-badge">Activité Intense</span>
+                </div>
+            </div>
+
+
+            <div class="platform-card">
+                <div class="platform-inner">
+                    <div class="platform-name">🥉 Root Me Pro</div>
+                    <div class="platform-desc">2065 pts</div>
+                    <span class="platform-badge">Activité Faible</span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Certifications <span>&amp; Training</span></h2>
+        <div class="certifications-container">
+            <div class="cert-item">
+                <div class="cert-card">
+                    <div class="cert-title">🎓 BTL1 Certification</div>
+                    <div class="cert-issuer">Blue Team Level 1</div>
+                    <div class="cert-status">In Progress</div>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-card">
+                    <div class="cert-title"> CyberDefenders Tracks</div>
+                    <div class="cert-issuer">6/8 Tracks</div>
+                    <div class="cert-status">Completed</div>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-card">
+                    <div class="cert-title">BTJA</div>
+                    <div class="cert-issuer">BTJA Certified</div>
+                    <div class="cert-status">Completed</div>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-card">
+                    <div class="cert-title"> Security & Ethical Hacking</div>
+                    <div class="cert-issuer">by University of Colorado Boulder</div>
+                    <div class="cert-status">Completed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Stats <span>&amp; Achievements</span></h2>
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-box-content">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Active</div>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-content">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">Labs Done</div>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-content">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">CTF Events</div>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-content">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Dedicated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        const observerOptions = {
+            // lower threshold so smaller elements trigger reliably
+            threshold: 0.15,
+            // reduce negative bottom margin so items entering viewport fire sooner
+            rootMargin: '0px 0px -10% 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.stat-box').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.cert-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.platform-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.section-title').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

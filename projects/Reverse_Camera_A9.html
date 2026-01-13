@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet Reverse Engineering Caméra A9 - Portfolio</title>
+  <link rel="stylesheet" href="../css/styles-v3.css" />
+  <link rel="stylesheet" href="../css/styles-projects.css" />
+</head>
+
+<body>
+  <div class="particle-bg">
+    <img class="particle-bg-image"
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      alt="" />
+    <div class="particle-layer">
+      <!-- 60 cercles par exemple -->
+      <div class="circle-container">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-container">
+        <div class="circle"></div>
+      </div>
+      <!-- duplique cette ligne jusqu'à ~60-100 fois -->
+    </div>
+  </div>
+  <div class="project-container">
+    <!-- Header with icon and title -->
+    <div class="project-header-section">
+      <span class="project-icon">🔬</span>
+      <h1 class="project-title">Projet Reverse Engineering Caméra A9</h1>
+      <p class="project-subtitle">Reverse engineering d'une caméra Wifi A9</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="project-nav">
+      <div class="back-link">
+        <a href="../terminal.html#projects">← Retour au portfolio</a>
+      </div>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Complété</span>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="project-content">
+
+      <!-- Description section -->
+      <div class="section">
+        <h2 class="section-title">Description</h2>
+        <div class="section-body">
+          <p>
+            Investigation complète de la sécurité d’une caméra de surveillance A9 grand public via reverse engineering
+            matériel,
+            firmware et trafic réseau. L’objectif était d’identifier les vulnérabilités de l’appareil, les données
+            sensibles
+            accessibles et les risques d’exfiltration vers des serveurs tiers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objectives section -->
+      <div class="section">
+        <h2 class="section-title">Objectifs du projet</h2>
+        <div class="section-body">
+          <ul>
+            <li>Identifier les composants matériels de la caméra et les principaux protocoles utilisés (UART, JTAG,
+              réseau).</li>
+            <li>Récupérer et analyser les communications UART, JTAG et réseau afin d’identifier domaines, adresses IP,
+              logs et données sensibles exposées.</li>
+            <li>Produire un rapport de reverse engineering structuré décrivant la méthodologie, les découvertes et les
+              risques de sécurité associés.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Technology stack -->
+      <div class="section">
+        <h2 class="section-title">Technologies utilisées</h2>
+        <div class="section-body">
+          <ul class="tech-list">
+            <li>
+              <strong>Matériel & interfaces</strong>
+              <span>Caméra A9, démontage physique, identification du SoC BK7252 et des points de test UART /
+                JTAG.</span>
+            </li>
+            <li>
+              <strong>Acquisition de signaux</strong>
+              <span>Oscilloscope / Analog Discovery 3, logiciel WaveForms pour capturer et analyser les signaux UART et
+                JTAG.</span>
+            </li>
+            <li>
+              <strong>Analyse bas niveau</strong>
+              <span>Interface UART (logs, partitions mémoire, variables, mots de passe Wi‑Fi), shell UART via carte
+                Tigard / Arduino.</span>
+            </li>
+            <li>
+              <strong>Analyse réseau</strong>
+              <span>Point d’accès Wi‑Fi dédié, captures de trafic, inspection des requêtes HTTP(S), décompression gzip,
+                extraction de domaines et IP.</span>
+            </li>
+            <li>
+              <strong>Outils logiciels</strong>
+              <span>Burp Suite pour tester les endpoints et bannières serveur, scripts Python pour traitement et
+                déchiffrement de requêtes.</span>
+            </li>
+          </ul>
+
+          <div class="tech-stack">
+            <span class="tech-tag">Reverse Engineering</span>
+            <span class="tech-tag">IoT Security</span>
+            <span class="tech-tag">UART/JTAG</span>
+            <span class="tech-tag">Network Analysis</span>
+            <span class="tech-tag">Burp Suite</span>
+            <span class="tech-tag">Oscilloscope</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key learnings -->
+      <div class="section">
+        <h2 class="section-title">Apprentissages clés</h2>
+        <div class="learnings-grid">
+          <div class="learning-card">
+            <p><strong>Méthodologie de reverse engineering</strong>
+              Première mise en pratique d’une démarche complète : démontage matériel, identification des composants,
+              analyse UART/JTAG,
+              trafic réseau, puis synthèse dans un rapport structuré.</p>
+          </div>
+          <div class="learning-card">
+            <p><strong>Travail de soudure de précision</strong>
+              Apprentissage de la soudure de fils sur des petits points de test (UART, JTAG) sans endommager le PCB.</p>
+          </div>
+          <div class="learning-card">
+            <p><strong>Limites de la sécurité des objets connectés</strong>
+              Prise de conscience qu’un simple device grand public peut exposer mots de passe Wi‑Fi, métadonnées et
+              informations sensibles
+              dans des logs ou du trafic réseau.</p>
+          </div>
+          <div class="learning-card">
+            <p><strong>Volume et complexité des données</strong>
+              Découverte de la difficulté à traiter et prioriser une grande quantité d’informations (logs, domaines, IP,
+              commandes, variables)
+              et de la nécessité de très bien organiser l’analyse.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcomes -->
+      <div class="section">
+        <h2 class="section-title">Résultats</h2>
+        <div class="section-body">
+          <p>
+            L’analyse de la caméra A9 a permis de mettre en évidence plusieurs failles majeures : mots de passe Wi‑Fi en
+            clair
+            dans les logs UART, nombreuses informations réseau détaillées (adresses IP, domaines, configuration, pays,
+            fuseau horaire)
+            et accès à un shell donnant une visibilité profonde sur le système. Le trafic réseau a montré l’envoi de
+            données utilisateur
+            vers des serveurs tiers (China Telecom, Alibaba Cloud, services Google et infrastructure xcthings), parfois
+            sous forme
+            compressée, ce qui suggère une possible exfiltration silencieuse de données.
+            ​ <br><br>
+
+            Le travail a également confirmé que les interfaces de debug (UART, shell, JTAG) constituent des points
+            d’entrée critiques :
+            un attaquant avec un accès physique limité peut récupérer de nombreux secrets techniques et opérationnels de
+            l’appareil.
+            Le rapport final conclut que cette caméra présente des risques significatifs pour la confidentialité et
+            illustre la nécessité
+            d’auditer les équipements IoT avant tout déploiement réel, en particulier dans un contexte domestique ou
+            d’entreprise.
+
+          </p>
+        </div>
+      </div>
+
+      <!-- EXEMPLE DE GALERIE D'IMAGES -->
+      <div class="section">
+        <h2 class="section-title">Galerie / Screenshots</h2>
+        <div class="project-gallery">
+          <div class="gallery-item">
+            <img src="../assets/Reverse camera A9/camera_A9.png" alt="Camera A9" class="zoomable" />
+            <div class="gallery-caption">Vue d'ensemble de la caméra A9</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Reverse camera A9/composant.png" alt="image composant" class="zoomable" />
+            <div class="gallery-caption">Vue des composants de la caméra</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Reverse camera A9/points_de_test.png" alt="image points de test" class="zoomable" />
+            <div class="gallery-caption">Vue des points de test</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Reverse camera A9/UART.png" alt="identification du protocole" class="zoomable" />
+            <div class="gallery-caption">Identification du protocole UART</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Reverse camera A9/JTAG.png" alt="JTAG" class="zoomable" />
+            <div class="gallery-caption">Interface JTAG</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Reverse camera A9/exemple-uart-info.png" alt="exemple d'information collectée"
+              class="zoomable" />
+            <div class="gallery-caption">Exemple d'information collectée</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer with metadata -->
+      <div class="project-footer">
+        <span class="status-badge">
+          <span class="status-dot"></span>
+          Complété & Documenté
+        </span>
+      </div>
+    </div>
+    <script src="../js/galerie.js"></script>
+    <script src="../js/project-back.js"></script>
+</body>
+
+</html>

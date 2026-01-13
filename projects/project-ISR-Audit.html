@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet ISR Audit & Remédiation - Portfolio</title>
+  <link rel="stylesheet" href="../css/styles-v3.css" />
+  <link rel="stylesheet" href="../css/styles-projects.css" />
+</head>
+
+<body>
+  <div class="particle-bg">
+    <img class="particle-bg-image"
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      alt="" />
+    <div class="particle-layer">
+      <!-- 60 cercles par exemple -->
+      <div class="circle-container">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-container">
+        <div class="circle"></div>
+      </div>
+      <!-- duplique cette ligne jusqu'à ~60-100 fois -->
+    </div>
+  </div>
+  <div class="project-container">
+    <!-- Header with icon and title -->
+    <div class="project-header-section">
+      <span class="project-icon">🔬</span>
+      <h1 class="project-title">Projet ISR Audit & Remédiation</h1>
+      <p class="project-subtitle">Audit et remédiation d'une infrastructure réseau sécurisée</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="project-nav">
+      <div class="back-link">
+        <a href="../terminal.html#projects">← Retour au portfolio</a>
+      </div>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>Complété</span>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="project-content">
+
+      <!-- Description section -->
+      <div class="section">
+        <h2 class="section-title">Description</h2>
+        <div class="section-body">
+          <p>
+            Audit complet et remédiation d'une infrastructure réseau sur Proxmox comprenant 5 machines virtuelles
+            (OPNsense, Windows Server, Centreon, Dolibarr (ERP), BACKUP). Mission en groupe de 4 : diagnostic initial,
+            identification des
+            vulnérabilités critiques, segmentation réseau et durcissement systémique. Infrastructure passée de 0
+            configuration à une architecture sécurisée multi-zones en 3 semaines.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objectives section -->
+      <div class="section">
+        <h2 class="section-title">Objectifs du projet</h2>
+        <div class="section-body">
+          <ul>
+            <li>Auditer une infrastructure réseau initiale non configurée et sans documentation (credentials perdues)
+            </li>
+            <li>Identifier et exploiter les vecteurs d'attaque critiques (accès par défaut, segmentation absente)</li>
+            <li>Concevoir et déployer une architecture réseau segmentée (3 zones : Clients, Administration, Backup)</li>
+            <li>Déployer une stack sécurité complète (pare-feu OPNsense, DHCP/DNS, SSH, supervision Centreon)</li>
+            <li>Rédiger rapports d'audit, de remédiation et documentation technique complète</li>
+            <li>Atteindre un score PingCastle A = 0/100</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Technology stack -->
+      <div class="section">
+        <h2 class="section-title">Technologies utilisées</h2>
+        <div class="section-body">
+          <ul class="tech-list">
+            <li>
+              <strong>Infrastructure</strong>
+              <span>Proxmox VE (hyperviseur, orchestration VM) | PBS (Proxmox Backup Server, sauvegarde hebdomadaire) |
+                OPNsense (pare-feu, segmentation inter-zones)</span>
+            </li>
+            <li>
+              <strong>Systèmes d’exploitation</strong>
+              <span>Windows Server 2019 (AD, DHCP, DNS interne, GPO) | Debian 13 (services UNIX, Dolibarr ERP,
+                supervision)</span>
+            </li>
+            <li>
+              <strong>Sécurité & supervision</strong>
+              <span>Centreon (SNMP Windows/Linux, dashboards alertes) | pare-feu UFW & Windows Firewall</span>
+            </li>
+            <li>
+              <strong>Gestion des identités</strong>
+              <span>Active Directory/LDAPS | GPO (logging, mots de passe, comptes de service) | groupe sysadmin local
+                sur Debian</span>
+            </li>
+            <li>
+              <strong>Applications</strong>
+              <span>Dolibarr ERP/CRM (accès BDD durcis)</span>
+            </li>
+          </ul>
+
+          <div class="tech-stack">
+            <span class="tech-tag">Centreon</span>
+            <span class="tech-tag">OPNsense</span>
+            <span class="tech-tag">Dolibarr</span>
+            <span class="tech-tag">Proxmox</span>
+            <span class="tech-tag">PingCastle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key learnings -->
+      <div class="section">
+        <h2 class="section-title">Apprentissages clés</h2>
+        <div class="learnings-grid">
+          <div class="learning-card">
+            <p><strong>Méthodologie d’audit</strong>Première vraie mise en pratique d’une méthodologie d’audit complète,
+              de la collecte d’information jusqu’aux recommandations structurées.</p>
+          </div>
+          <div class="learning-card">
+            <p><strong>Accès et pivots</strong>Prise de conscience qu’on n’a pas toujours tous les accès et qu’il faut
+              savoir les retrouver, pivoter, et parfois modifier / remplacer des hashes ou configs pour reprendre la
+              main proprement.</p>
+          </div>
+          <div class="learning-card">
+            <p><strong>Complexité et volume de travail</strong>Découverte de l’ampleur réelle d’un projet d’audit et de
+              remédiation d’infra : il y a tellement de points à traiter qu’il faut apprendre à prioriser et structurer,
+              sinon on ne sait même pas par où commencer.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcomes -->
+      <div class="section">
+        <h2 class="section-title">Résultats</h2>
+        <div class="section-body">
+          <p>
+            Avant le projet, l’infrastructure Proxmox n’était ni segmentée ni documentée, sans supervision ni sauvegarde
+            opérationnelle.
+            Après le projet, elle est organisée en trois zones (Clients, Administration, Backup) avec firewall OPNsense,
+            règles de filtrage,
+            supervision Centreon et sauvegarde hebdomadaire via PBS.
+            <br><br>
+            La partie Active Directory est passée d’une configuration de base à un environnement durci (GPO, politiques
+            de mots de passe,
+            firewall, groupes dédiés), avec un score PingCastle de 20/100 correspondant à un socle sain pour une petite
+            infra, les points
+            restants étant liés à des choix de design volontairement gardés pour la connectivité inter-zones. L’équipe a
+            livré plusieurs
+            rapports structurés (audit, remédiation, technique) qui documentent l’architecture finale et permettent à
+            une autre équipe de
+            reprendre l’infrastructure sans perte d’information.
+          </p>
+        </div>
+      </div>
+
+      <!-- EXEMPLE DE GALERIE D'IMAGES -->
+      <div class="section">
+        <h2 class="section-title">Galerie / Screenshots</h2>
+        <div class="project-gallery">
+          <div class="gallery-item">
+            <img src="../assets/Audit/Centreon-Audit.png" alt="Centreon" class="zoomable" />
+            <div class="gallery-caption">Vue de la supervision Centreon</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/audit/Proxmox-Backup.png" alt="Proxmox Backup" class="zoomable" />
+            <div class="gallery-caption">Vue Proxmox des 5 VM + Backup</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Audit/Pingcastle.png" alt="PingCastle" class="zoomable" />
+            <div class="gallery-caption">Score PingCastle après remédiation</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/Audit/Dolibarr.png" alt="Dolibarr" class="zoomable" />
+            <div class="gallery-caption">Interface de Dolibarr</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer with metadata -->
+    <div class="project-footer">
+      <span class="status-badge">
+        <span class="status-dot"></span>
+        Complété & Documenté
+      </span>
+    </div>
+  </div>
+  <script src="../js/galerie.js"></script>
+  <script src="../js/project-back.js"></script>
+</body>
+
+</html>
